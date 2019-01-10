@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" />
+<meta name="title" content="Get Tickets | Jeopardy.com" />
+<link rel="canonical" href="https://www.jeopardy.com/tickets" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="description" content="This is the official Jeopardy! tickets page. Request free tickets for upcoming dates." />
+<link rel="shortcut icon" href="/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+<script src="/sites/default/files/google_tag/google_tag.script.js?pl3vk1"></script>
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+
+    <title>Get Tickets | Jeopardy.com</title>
+    <link rel="stylesheet" href="/sites/default/files/css/css_OzSL9B9Z25CHVJCzKFBP4oQXxbNqXLgRa_-GonfIat8.css?pl3vk1" media="all" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<link rel="stylesheet" href="/sites/default/files/css/css_8gVfG9eZIevBRFn-4KDwfNsT98dmozgAIdsZvoXvJMI.css?pl3vk1" media="all" />
+
+
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body class="workspace-sperestwcrdhz4lpq.devcloud.acquia-sites.com layout-no-sidebars path--tickets path-tickets">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD4LM4D" height="0" width="0" title="Google Tag Manager"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+	<div id="mobile-menu" class="clearfix"></div>
+  <div id="page">
+    <header id="header" class="header container" role="banner" aria-label="Site header">
+                      <nav class="navbar navbar-expand-lg container-inner" id="navbar-main">
+                    <div class="container">
+                      <div class="navbar-brand col-10">
+                         <div class="col-10 site-name-slogan">
+              <a href="/" title="Home" rel="home">Jeopardy.com</a>
+                    <div class="site-branding__slogan">America's Favorite Quiz Show</div>
+          </div>
+
+
+            </div>
+                          <div class="" id="CollapsingNavbar">
+                  <div class="region row region-header-form">
+    <div id="block-juser-account-links" class="block block-juser block- block-juser-account-links-block">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+      <div>
+    <div class="juser-accounts-links">
+	        <span class="account-link link-dashboard">
+	                &nbsp;|&nbsp;
+	        </span>
+
+	        <span class="account-link link-login">
+	                <a href="/#raas-login" class="gigya-raas-login" id="gigya-raas-login">Sign In / Create Account</a>
+	        </span>
+
+	        <span class="account-links link-logout">
+
+	        </span>
+    </div>
+</div>
+
+    </div>
+  </div>
+<div class="views-exposed-form block block-views block- block-views-exposed-filter-blockacquia-search-page" data-drupal-selector="views-exposed-form-acquia-search-page" id="block-exposedformacquia-searchpage-2">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+
+<form action="/search" method="get" id="views-exposed-form-acquia-search-page" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+
+  <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-search form-item-search form-no-label form-group">
+                <input placeholder="Search" data-drupal-selector="edit-search" type="text" id="edit-search" name="search" value="" size="30" maxlength="128" class="form-text form-control" />
+
+                  </fieldset>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-group" id="edit-actions--2"><button data-drupal-selector="edit-submit-acquia-search" type="submit" id="edit-submit-acquia-search" value="Search" class="button js-form-submit form-submit btn btn-primary">Search</button>
+</div>
+
+</div>
+
+</form>
+
+    </div>
+  </div>
+
+  </div>
+
+                  <div class="region row region-primary-menu">
+    <div id="block-mainnavigation" class="block block-superfish block- block-main-navigation block-superfishmain">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+
+<ul id="superfish-main" class="menu sf-menu sf-main sf-horizontal sf-style-none">
+
+<li id="main-standardfront-page"
+     class="sf-depth-1 sf-no-children"><a href="/" class="sf-depth-1">Home</a></li><li id="main-menu-link-contentbf06cc5f-9ab7-45d0-8957-835cee361742"
+     class="sf-depth-1 menuparent latest-jbuzz"><a href="/jbuzz" target="_self" class="latest-jbuzz sf-depth-1 menuparent">Latest J!Buzz</a><ul><li id="main-menu-link-contentcba38c5f-9881-48e0-ad2e-a3600164cf7e"
+     class="sf-depth-2 sf-no-children"><a href="/jbuzz/news-events" target="_self" class="sf-depth-2">News &amp; Events</a></li><li id="main-menu-link-contentfc33d3cc-7ce3-4fbb-95a9-bbd8063ffe30"
+     class="sf-depth-2 sf-no-children"><a href="/jbuzz/behind-scenes" target="_self" class="sf-depth-2">Behind the Scenes</a></li><li id="main-menu-link-contentab93b032-a545-4186-b382-f4ce071ba4d6"
+     class="sf-depth-2 sf-no-children"><a href="/jbuzz/contestants" target="_self" class="sf-depth-2">Contestants</a></li><li id="main-menu-link-content2660a38a-dab1-4be6-8fc8-9bec83573aa9"
+     class="sf-depth-2 sf-no-children"><a href="/jbuzz#events" target="_self" class="sf-depth-2">Mark Your Calendar</a></li></ul></li><li id="main-menu-link-contentd91fdf06-2d18-4dee-bc94-9da1e5f5989b"
+     class="sf-depth-1 menuparent contestant-zone"><a href="/contestant-zone" target="_self" class="contestant-zone sf-depth-1 menuparent">Contestant Zone</a><ul><li id="main-menu-link-content7e2765c5-b3b8-42c2-8da6-c15f62dbf77d"
+     class="sf-depth-2 sf-no-children"><a href="/contestant-zone" target="_self" class="sf-depth-2">This Week on Jeopardy!</a></li><li id="main-menu-link-content7e256bfd-9cdf-4c27-ae48-c8c00d3114af"
+     class="sf-depth-2 sf-no-children"><a href="/contestant-zone/toc-tracker" class="sf-depth-2">Tournament of Champions Tracker</a></li><li id="main-menu-link-contentcf9d1388-7c05-4b82-ad8e-a74ddce80c22"
+     class="sf-depth-2 sf-no-children"><a href="/contestant-zone/champion-archive" target="_self" class="sf-depth-2">Champions Archive</a></li><li id="main-menu-link-content2415956b-0d21-4fc8-9b91-5b55c8e98d7a"
+     class="sf-depth-2 sf-no-children"><a href="/all-stars" target="_self" class="sf-depth-2">All-Star Games</a></li><li id="main-menu-link-contentb465361a-6bba-4395-a2b2-cf89fc336175"
+     class="sf-depth-2 sf-no-children"><a href="/contestant-zone/all-stars-fantasy-league" class="sf-depth-2">All-Stars Fantasy League Sweepstakes</a></li><li id="main-menu-link-content1e14856b-7742-489a-8ea8-cdbb325e1e22"
+     class="sf-depth-2 sf-no-children"><a href="/tournaments/2018/teen-tournament" target="_self" class="sf-depth-2">Teen Tournament</a></li></ul></li><li id="main-menu-link-content02195470-4236-4539-b4e0-0c46ec9164bd"
+     class="sf-depth-1 menuparent be-on-j"><a href="/be-on-j" target="_self" class="be-on-j sf-depth-1 menuparent">Be on J!</a><ul><li id="main-menu-link-content4f5a0bae-db44-4074-8b56-1f9e1dfc9d23"
+     class="sf-depth-2 sf-no-children"><a href="/be-on-j/practice-tests" target="_self" class="sf-depth-2">Take the Practice Test</a></li><li id="main-menu-link-contentc2313340-5c7f-40e7-87b6-f84079559c75"
+     class="sf-depth-2 sf-no-children"><a href="/be-on-j/faqs" class="sf-depth-2">Contestant FAQs</a></li><li id="main-menu-link-content7b856ced-aabb-47d8-b943-92ac025725a6"
+     class="sf-depth-2 sf-no-children"><a href="/be-on-j/prep-center" target="_self" class="sf-depth-2">Prep Center</a></li></ul></li><li id="main-menu-link-content8b69fce2-c4ec-49a4-8cd9-3629c8090983"
+     class="sf-depth-1 menuparent jeffect"><a href="/jeffect" target="_self" class="jeffect sf-depth-1 menuparent">The J!Effect</a><ul><li id="main-menu-link-contentb5d0b6c4-c2f4-4391-9744-5e144d166054"
+     class="sf-depth-2 sf-no-children"><a href="/jeffect" target="_self" class="sf-depth-2">J!Effect Home</a></li><li id="main-menu-link-contentdfbef20d-6497-4edc-a483-9477521f1e33"
+     class="sf-depth-2 sf-no-children"><a href="/jeffect/submit-story" target="_self" class="sf-depth-2">Submit Fan Story</a></li><li id="main-menu-link-contentbd6405a2-5b47-4469-8596-58f31ecdd75c"
+     class="sf-depth-2 sf-no-children"><a href="/jeffect/alumni" target="_self" class="sf-depth-2">J!Alumni Stories</a></li><li id="main-menu-link-contentb4405a7f-6145-4564-b8c4-5d49c59c79d6"
+     class="sf-depth-2 sf-no-children"><a href="/jeffect/alumni/submit-story" target="_self" class="sf-depth-2">Submit J!Alumni Story</a></li></ul></li><li id="main-menu-link-content0efe0c5f-b733-4f22-813e-ecf82a78c910"
+     class="sf-depth-1 menuparent play-shop"><a href="/play-shop" target="_self" class="play-shop sf-depth-1 menuparent">Play &amp; Shop</a><ul><li id="main-menu-link-contente768c4f3-f528-4dd9-b742-aa61dd07061e"
+     class="sf-depth-2 sf-no-children sf-external"><a href="https://www.thejeopardystore.com/" target="_blank" class="sf-depth-2 sf-external">Store</a></li><li id="main-menu-link-contentd3306f57-553b-4b5e-aa4b-6d329f284fbc"
+     class="sf-depth-2 sf-no-children"><a href="/play-shop#games" target="_self" class="sf-depth-2">All Games</a></li><li id="main-menu-link-content297d5595-f97a-480b-9400-664b94198c8e"
+     class="sf-depth-2 sf-no-children"><a href="/play-shop/j6" target="_self" title="There’s an extra clue written for each Jeopardy! category. Now you get to play them. Every day!" class="sf-depth-2">J!6</a></li><li id="main-menu-link-contentf5bf9c6a-ead4-498e-a287-09e4313fef1f"
+     class="sf-depth-2 sf-no-children"><a href="/play-shop/j6-alexa" class="sf-depth-2">J!6 Alexa</a></li><li id="main-menu-link-content42e9f55c-ca90-4ebd-a296-16133ceb3640"
+     class="sf-depth-2 sf-no-children"><a href="/play-shop/infinite-final-j" class="sf-depth-2">Infinite Final J!</a></li><li id="main-menu-link-content6c56301a-f4de-4eee-bc56-c7d59a7fd985"
+     class="sf-depth-2 sf-no-children"><a href="/play-shop/new-york-times-clue-of-the-day" target="_self" class="sf-depth-2">New York Times</a></li></ul></li><li id="main-menu-link-contentb563a739-942c-415f-be93-648750aeef70"
+     class="sf-depth-1 menuparent watch"><a href="/watch" target="_self" class="watch sf-depth-1 menuparent">Watch</a><ul><li id="main-menu-link-content8c43a5e4-b844-45bf-b737-a9b3121fcefb"
+     class="sf-depth-2 sf-no-children"><a href="/watch" target="_self" class="sf-depth-2">Find Your Station</a></li></ul></li><li id="main-menu-link-contentee07ada0-ffb8-40e1-9666-860398d7b5a4"
+     class="sf-depth-1 menuparent about"><a href="/about" target="_self" class="about sf-depth-1 menuparent">About</a><ul><li id="main-menu-link-content78608ef3-fb07-4467-b0a3-aa89db197b96"
+     class="sf-depth-2 sf-no-children"><a href="/about/cast/alex-trebek" class="sf-depth-2">Alex</a></li><li id="main-menu-link-content1b930e69-4787-4308-af00-e3376d0f806b"
+     class="sf-depth-2 sf-no-children"><a href="/about/clue-crew" target="_self" class="sf-depth-2">Clue Crew</a></li><li id="main-menu-link-content46b2ef6e-9bb9-4f4e-be70-2880f11228df"
+     class="sf-depth-2 sf-no-children"><a href="/about#production" target="_self" class="sf-depth-2">Production Team</a></li><li id="main-menu-link-contentbd1cc180-2f8c-41b6-ab09-32316c3edff5"
+     class="sf-depth-2 sf-no-children"><a href="/about/awards" target="_self" class="sf-depth-2">Awards</a></li><li id="main-menu-link-contentd9b3827f-70e9-4ff4-b498-b8d27510e740"
+     class="sf-depth-2 sf-no-children"><a href="/about/media-center" target="_self" class="sf-depth-2">Media Center</a></li><li id="main-menu-link-contentcf1739dd-43b5-4472-baf8-9c4890deb990"
+     class="sf-depth-2 sf-no-children"><a href="/be-on-j/faqs#faq_section_1306" target="_self" class="sf-depth-2">FAQs</a></li></ul></li><li id="main-menu-link-contentf9149899-4ef6-421b-9f10-f426634950d6"
+     class="active-trail sf-depth-1 sf-no-children tickets"><a href="/tickets" target="_self" class="tickets is-active sf-depth-1">Get Tickets</a></li>
+</ul>
+
+    </div>
+  </div>
+<div id="block-socialmedialinks" class="block block-block-content block-social-media-links block-block-content7d95915c-866d-4aff-b4f0-1c25f448b174">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+
+      <div class="field field--name-field-social-media-links field--type-link field--label-hidden field__items">
+              <div class="field__item"><a href="https://www.facebook.com/Jeopardy" target="_blank" class="facebook" rel="nofollow" title="Facebook" aria-label="Facebook">Facebook</a></div>
+              <div class="field__item"><a href="https://www.twitter.com/jeopardy" target="_blank" class="twitter" rel="nofollow" title="Twitter" aria-label="Twitter">Twitter</a></div>
+              <div class="field__item"><a href="https://www.instagram.com/jeopardy/" target="_blank" class="instagram" rel="nofollow" title="Instagram" aria-label="Instagram">Instagram</a></div>
+              <div class="field__item"><a href="https://www.youtube.com/user/jeopardy" target="_blank" class="youtube" rel="nofollow" title="YouTube" aria-label="YouTube">YouTube</a></div>
+              <div class="field__item"><a href="https://www.snapchat.com/add/jeopardy" target="_blank" class="snapchat" rel="nofollow" title="Snapchat" aria-label="Snapchat">Snapchat</a></div>
+          </div>
+
+    </div>
+  </div>
+
+  </div>
+
+	          </div>
+                                </div>
+                  </nav>
+          </header>
+          <div class="highlighted">
+        <aside class="container section clearfix" role="complementary">
+            <div class="region row region-highlighted">
+
+
+  </div>
+
+        </aside>
+      </div>
+            <div id="main-wrapper" class="layout-main-wrapper clearfix">
+              <div id="main" class="container">
+                    <div class="row row-offcanvas row-offcanvas-left clearfix">
+              <main class="main-content col order-last sidebar-offcanvas" id="content" role="main">
+                <section class="section">
+                  <a id="main-content" tabindex="-1"></a>
+                    <div class="region row region-content">
+    <div id="block-jeopardy-content" class="block block-system block- block-main-page-content block-system-main-block col-12">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+
+<form class="requesttickets" data-drupal-selector="requesttickets" action="/tickets" method="post" id="requesttickets" accept-charset="UTF-8">
+  <div class="form-header js-form-wrapper form-group" data-drupal-selector="edit-header" id="edit-header"><h3 data-drupal-selector="edit-form-head1">Jeopardy! Priority Seating Request Form</h3>
+<h1 data-drupal-selector="edit-form-head2">Attend a taping of the show - Live!</h1>
+</div>
+<div class="form-body js-form-wrapper form-group" data-drupal-selector="edit-body" id="edit-body"><div data-drupal-selector="edit-details"><p class="details">
+	This is the official Jeopardy! tickets request page.
+	Tickets to see a taping of Jeopardy! are free, but they are also extremely limited.
+	Your tickets allow you to be among the first group of people to enter the
+	TV studio on the day of taping, and are available on a first come,
+	first served basis only. Just fill out the form below to reserve seats
+	for up to four members per party.
+	Available show times for the current season are posted below and
+	will be updated regularly. If no convenient show times are listed
+	in the drop-down menu, please check back at a later time.
+</p>
+<div class="accordion">
+	<h3>Ticket Details</h3>
+	<div>
+		<ul>
+			<li>
+				All fields are required.
+			</li>
+			<li>
+				No purchase necessary.
+			</li>
+			<li>
+				The following page will serve as your confirmation for the
+						receipt of ticket(s). Print and save.
+			</li>
+			<li>
+				All expenses incurred are the responsibility of the participant.
+			</li>
+			<li>
+				All dates and times are subject to change at the Producer's sole discretion.
+						The dates above are currently the only dates available.
+						Please bookmark this page and check back each month for new tapings if
+						your preferred date is not listed above. It is anticipated that demand will exceed supply.
+			</li>
+			<li>
+				Please bring a valid government-issued photo ID upon arrival.
+						This information must match the information submitted with your request / confirmation.
+						By entering the SPE building you will also be required to undergo a metal detector screening
+						and a bag check. Please refrain from bringing extra personal belongings.
+						Large bags and backpacks are prohibited.
+			</li>
+			<li>
+				By entering the SPE building you hereby consent to video surveillance and a
+						search of your vehicle and/or personal belongings at any time.
+			</li>
+			<li>
+				Due to production requirements, children under age 8 will not be admitted.
+			</li>
+			<li>
+				Smoking, food, beverages, recording equipment, and weapons of any kind are strictly prohibited.
+			</li>
+			<li>
+				SPE strictly prohibits the unauthorized use of cameras or any other recording
+						devices - including cell phone cameras. Use of any recording device must be
+						approved by/or at the direction of the Audience Coordinators. Cell phones
+						must be turned off during tapings.
+			</li>
+			<li>
+				Only the requests made through this page will receive priority seating.
+						Your priority seating ticket request takes precedence over any other ticketing outlet.
+			</li>
+			<li>
+				For Individual tickets and groups up to four persons, you MUST confirm your
+						seats within 5 - 7 days of your tape date. If you do not confirm your seats
+						within this time frame your seats are subject to cancellation.
+						To confirm your seats please call 818-773-3465.
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+
+  <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-first-name form-item-first-name form-group">
+          <label for="edit-first-name" class="js-form-required form-required">
+  	<div class="switch-toggle"></div>First Name</label>
+                <input class="first-name form-text required form-control" data-drupal-selector="edit-first-name" type="text" id="edit-first-name" name="first_name" value="" size="60" maxlength="128" required="required" aria-required="true" />
+
+                  </fieldset>
+
+  <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-last-name form-item-last-name form-group">
+          <label for="edit-last-name" class="js-form-required form-required">
+  	<div class="switch-toggle"></div>Last Name</label>
+                <input class="last-name form-text required form-control" data-drupal-selector="edit-last-name" type="text" id="edit-last-name" name="last_name" value="" size="60" maxlength="128" required="required" aria-required="true" />
+
+                  </fieldset>
+
+  <fieldset class="js-form-item js-form-type-email form-type-email js-form-item-email form-item-email form-group">
+          <label for="edit-email" class="js-form-required form-required">
+  	<div class="switch-toggle"></div>Email</label>
+                <input class="email form-email required form-control" data-drupal-selector="edit-email" type="email" id="edit-email" name="email" value="" size="60" maxlength="254" required="required" aria-required="true" />
+
+                  </fieldset>
+<fieldset class="phone required js-form-item form-item js-form-wrapper form-group" data-drupal-selector="edit-phone" aria-describedby="edit-phone--description" id="edit-phone" required="required" aria-required="true">
+      <legend>
+    <span class="fieldset-legend js-form-required form-required">Phone Number</span>
+  </legend>
+  <div class="fieldset-wrapper">
+
+  <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-phone-1 form-item-phone-1 form-no-label form-group">
+                <input class="phone-1 form-text required form-control" data-drupal-selector="edit-phone-1" type="text" id="edit-phone-1" name="phone_1" value="" size="60" maxlength="3" required="required" aria-required="true" />
+
+                  </fieldset>
+
+  <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-phone-2 form-item-phone-2 form-no-label form-group">
+                <input class="phone-2 form-text required form-control" data-drupal-selector="edit-phone-2" type="text" id="edit-phone-2" name="phone_2" value="" size="60" maxlength="3" required="required" aria-required="true" />
+
+                  </fieldset>
+
+  <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-phone-3 form-item-phone-3 form-no-label form-group">
+                <input class="phone-3 form-text required form-control" data-drupal-selector="edit-phone-3" type="text" id="edit-phone-3" name="phone_3" value="" size="60" maxlength="4" required="required" aria-required="true" />
+
+                  </fieldset>
+
+              <small id="edit-phone--description" class="description text-muted">Mobile number preferred</small>
+      </div>
+</fieldset>
+
+  <fieldset class="js-form-item js-form-type-select form-type-select js-form-item-showtimes form-item-showtimes form-group">
+          <label for="edit-showtimes" class="js-form-required form-required">
+  	<div class="switch-toggle"></div>Available Show Times</label>
+                <div class="form-type-select-wrapper"><select class="showtimes form-select required form-control" data-drupal-selector="edit-showtimes" id="edit-showtimes" name="showtimes" required="required" aria-required="true"><option value="" selected="selected">Available Show Times</option><option value="814">Tuesday, 1/29/19 - 11:00am</option><option value="817">Wednesday, 1/30/19 - 2:15pm</option></select></div>
+                  </fieldset>
+
+  <fieldset class="js-form-item js-form-type-select form-type-select js-form-item-seats-number form-item-seats-number form-group">
+          <label for="edit-seats-number" class="js-form-required form-required">
+  	<div class="switch-toggle"></div>Number of Seats</label>
+                <div class="form-type-select-wrapper"><select class="seats-number form-select required form-control" data-drupal-selector="edit-seats-number" id="edit-seats-number" name="seats_number" required="required" aria-required="true"><option value="" selected="selected">Number of Seats</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+                  </fieldset>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-group" id="edit-actions"><button data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Submit" class="button button--primary js-form-submit form-submit btn btn-primary">Submit</button>
+<p class="disclaimer" data-drupal-selector="edit-form-footer">For more ticket information, call 800-482-9840. We can also accommodate larger groups, but those tickets must be reserved by phone. For groups larger than 4 guests, please call 818-772-6788 Monday through Friday between 10am and 6pm PT.</p>
+</div>
+</div>
+<input autocomplete="off" data-drupal-selector="form-z-tyj2ig9qu3gyieyf8ymss1wpnu7jnuhvinwo-vr9i" type="hidden" name="form_build_id" value="form-z_tyj2ig9QU3GyIEyF8YmSS1WPnu7jnuhviNwo-vR9I" class="form-control" />
+<input data-drupal-selector="edit-requesttickets" type="hidden" name="form_id" value="RequestTickets" class="form-control" />
+
+</form>
+
+    </div>
+  </div>
+
+  </div>
+
+                </section>
+              </main>
+                                  </div>
+        </div>
+          </div>
+        <footer class="site-footer">
+              <div class="container">
+                      <div class="site-footer__top clearfix">
+
+                <div class="region row region-footer-second">
+    <div id="block-footerspecopyright" class="block block-block-content block-text-block block-footer-spe-copyright block-block-contentbb754501-f8d1-4927-a268-c0386ac1c42f">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><img alt="Sony Pictures Entertainment" data-entity-type="" data-entity-uuid="" src="/themes/jeopardy/images/logo_spe.png" /></p>
+
+<p>©2019 Jeopardy Productions, Inc. "JEOPARDY!" and "America's Favorite Quiz Show" are registered trademarks of Jeopardy Productions, Inc. All rights reserved.</p>
+</div>
+
+    </div>
+  </div>
+<nav role="navigation" aria-labelledby="block-sonyproperties-menu" id="block-sonyproperties" class="block block-menu navigation menu--sony-properties">
+
+  <h2 class="sr-only" id="block-sonyproperties-menu">Sony Properties</h2>
+
+
+
+              <ul class="clearfix nav">
+                    <li class="nav-item">
+                <a href="http://www.sonypictures.com/" target="_blank" class="nav-link">Visit SonyPictures.com</a>
+              </li>
+                <li class="nav-item">
+                <a href="http://www.sonypictures.com/movies" target="_blank" class="nav-link">Movies</a>
+              </li>
+                <li class="nav-item">
+                <a href="http://www.sonypictures.com/tv" target="_blank" class="nav-link">Television</a>
+              </li>
+                <li class="nav-item">
+                <a href="http://www.sonypictures.com/gamesandapps" target="_blank" class="nav-link">Games &amp; Apps</a>
+              </li>
+        </ul>
+
+
+
+  </nav>
+
+  </div>
+
+                <div class="region row region-footer-third">
+    <nav role="navigation" aria-labelledby="block-jeopardy-footer-menu" id="block-jeopardy-footer" class="block block-menu navigation menu--footer">
+
+  <h2 class="sr-only" id="block-jeopardy-footer-menu">Footer menu</h2>
+
+
+
+              <ul class="clearfix nav navbar-nav">
+                    <li class="nav-item">
+                <a href="/sitemap" target="_self" class="nav-link" data-drupal-link-system-path="sitemap">Site Map</a>
+              </li>
+                <li class="nav-item">
+                <a href="http://www.sonypictures.com/corp/tos.html" target="_blank" class="nav-link">Terms &amp; Conditions</a>
+              </li>
+                <li class="nav-item">
+                <a href="/canadiantermsaddendum" target="_blank" class="nav-link" data-drupal-link-system-path="node/836">Canadian Addendum to the Terms of Use</a>
+              </li>
+                <li class="nav-item">
+                <a href="http://www.sonypictures.com/corp/privacy.html" target="_blank" class="nav-link">Privacy Policy / Your California Privacy Rights</a>
+              </li>
+                <li class="nav-item">
+                <a href="/canadianprivacyaddendum" target="_blank" class="nav-link" data-drupal-link-system-path="node/841">Canadian Addendum to the Privacy Policy</a>
+              </li>
+                <li class="nav-item">
+                <a href="http://www.sonypictures.com/corp/help.html" target="_blank" class="nav-link">FAQs</a>
+              </li>
+                <li class="nav-item">
+                <a href="/contact" target="_self" class="nav-link" data-drupal-link-system-path="node/761">Contact Us</a>
+              </li>
+        </ul>
+
+
+
+  </nav>
+
+  </div>
+
+                <div class="region row region-footer-fourth">
+    <div id="block-footercopyright" class="block block-block-content block-text-block block-footer-copyright block-block-contentfd5dbdc7-979d-403b-bd00-e7152300f91f">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>©2019 Sony Pictures Entertainment Inc.</p>
+</div>
+
+    </div>
+  </div>
+<div id="block-socialmedialinks-2" class="block block-block-content block-social-media-links block-block-content7d95915c-866d-4aff-b4f0-1c25f448b174">
+	<div class="decorator-bg decorator-bg-1"></div>
+	<div class="decorator-bg decorator-bg-2"></div>
+	<div class="decorator-bg decorator-bg-3"></div>
+
+
+      <div class="content">
+
+      <div class="field field--name-field-social-media-links field--type-link field--label-hidden field__items">
+              <div class="field__item"><a href="https://www.facebook.com/Jeopardy" target="_blank" class="facebook" rel="nofollow" title="Facebook" aria-label="Facebook">Facebook</a></div>
+              <div class="field__item"><a href="https://www.twitter.com/jeopardy" target="_blank" class="twitter" rel="nofollow" title="Twitter" aria-label="Twitter">Twitter</a></div>
+              <div class="field__item"><a href="https://www.instagram.com/jeopardy/" target="_blank" class="instagram" rel="nofollow" title="Instagram" aria-label="Instagram">Instagram</a></div>
+              <div class="field__item"><a href="https://www.youtube.com/user/jeopardy" target="_blank" class="youtube" rel="nofollow" title="YouTube" aria-label="YouTube">YouTube</a></div>
+              <div class="field__item"><a href="https://www.snapchat.com/add/jeopardy" target="_blank" class="snapchat" rel="nofollow" title="Snapchat" aria-label="Snapchat">Snapchat</a></div>
+          </div>
+
+    </div>
+  </div>
+
+  </div>
+
+            </div>
+                            </div>
+          </footer>
+  </div>
+</div>
+
+  </div>
+
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"tickets","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"addtoany\/addtoany,bootstrap_barrio\/fontawesome,bootstrap_barrio\/form,bootstrap_barrio\/global-styling,bootstrap_barrio\/sidebar_collapse,core\/html5shiv,gigya\/drupalGigya,gigya_raas\/gigyaRaas,jeopardy\/form-labels,jeopardy\/global-styling,jeopardy_tickets\/jeopardy-tickets,juser\/account-links-block-esi,superfish\/superfish_hoverintent,superfish\/superfish_supersubs,superfish\/superfish_supposition,superfish\/superfish_touchscreen,system\/base","theme":"jeopardy","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/search":true},"gigya":{"globalParameters":{"bypassCookiePolicy":"never","enabledProviders":"*","sessionExpiration":"1800"},"apiKey":"3_UW2MnmP8AmEGk5bZNn6NVvFNJD_ffDt0GTkevqEusGe2s6aqCHm9rWMFyTVt5BYu","dataCenter":"us1.gigya.com","lang":"en","enableRaaS":true,"raas":{"login":{"screenSet":"Default-RegistrationLogin","customLang":{"password_must_contain_at_least":"Password must be at least","num_characters_total":"%num characters long","num_of_the_following_groups":"must contain both uppercase and lowercase letters and at least one number."},"mobileScreenSet":"","startScreen":"gigya-login-screen","sessionExpiration":"1800"},"register":{"screenSet":"Default-RegistrationLogin","customLang":{"password_must_contain_at_least":"Password must be at least","num_characters_total":"%num characters long","num_of_the_following_groups":"must contain both uppercase and lowercase letters and at least one number."},"mobileScreenSet":"","startScreen":"gigya-register-screen","sessionExpiration":"1800"}}},"gigyaExtra":{"isLogin":false,"session_type":"static","session_time":"1800"},"superfish":{"superfish-main":{"id":"superfish-main","sf":{"animation":{"opacity":"show","height":"show"},"speed":"fast","autoArrows":false,"dropShadows":false},"plugins":{"touchscreen":{"behaviour":"0","mode":"useragent_predefined"},"smallscreen":{"mode":"window_width","accordionButton":"2","title":"Main navigation"},"supposition":true,"supersubs":true}}},"fantasy_team":{"start_date":"2018-12-03T00:00:00","end_date":"2019-01-01T00:00:00","air_date":"2019-02-20T00:00:00","tournament_id":511},"user":{"username":"Profile","uid":0,"permissionsHash":"7258ce2b9ae59d17b6db1988699cd5b314cfca97d0ed61f60de7137a3b6fbc46"}}</script>
+<script src="/sites/default/files/js/js_uDS3qvBxG6hzhJiABl341b-INoOm0zO2ek1cDTKDmgU.js"></script>
+<script src="https://static.addtoany.com/menu/page.js" async></script>
+<script src="/sites/default/files/js/js_d_KCn_8cgZdCClkwUTBt0E-hQ5U4IOyZqxNPAw89d_Y.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f279b76a4c","applicationID":"165190312","transactionName":"YFFbZkdYWkQEUUZdWVkbeFFBUFtZSkJTU1NoV1hRXVw=","queueTime":0,"applicationTime":30,"atts":"TBZYEA9CSUo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
