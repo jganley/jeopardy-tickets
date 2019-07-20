@@ -1,2 +1,3 @@
-gmailLogin.txt
+.env
+AppData/*
 phoneNumbers.txt
