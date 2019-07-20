@@ -1,23 +1,64 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
-import urllib2
-import re
-import datetime
-import smtplib
-from email.mime.text import MIMEText
+import sys, os, datetime, urllib.request, smtplib
+from typing import List
+from bs4 import BeautifulSoup
+#from email.mime.text import MIMEText
+from dotenv import load_dotenv
 
-def notifyUser(message):
-    gmailLoginFile = open("gmailLogin.txt", "r")
-    gmail_user = gmailLoginFile.readline().rstrip()
-    gmail_pwd = gmailLoginFile.readline().rstrip()
 
-    phoneNumberFile = open("phoneNumbers.txt", "r")
+def alreadySentText() -> bool:
+    '''Check if this script has already sent a text today'''
+
+    today = datetime.datetime.today()
+
+    if not os.path.exists('AppData/execution_log.txt'):
+        with open('AppData/execution_log.txt', 'w'): pass
+
+    with open('AppData/execution_log.txt', 'r+') as f:
+        if f.readline() == today.strftime('%m%d%Y'):
+            return True
+
+    return False
+
+
+def storeSentText() -> None:
+    '''Record in application data that we sent a text today'''
+
+    today = datetime.datetime.today()
+
+    with open('AppData/execution_log.txt', 'w+') as f:
+        f.write(today.strftime('%m%d%Y'))
+
+
+def requestPage(url: str):
+    '''Send a GET request to the jeopardy website'''
+
+    return urllib.request.urlopen(url)
+
+
+def parseWebpage(html) -> List[str]:
+    '''Use BeautifulSoup to parse the webpage for available tickets'''
+
+    soup = BeautifulSoup(html, 'lxml')
+    available = soup.find(class_='showtimes form-select required form-control')
+
+    if available:
+        return list(map(lambda x: x.get_text(), available.findAll('option')))
+
+    return []
+
+
+def sendTexts(message: str) -> None:
+    '''Uses smtplib to send text to phone numbers'''
+
+    gmail_user = os.getenv('JSERVE_USERNAME')
+    gmail_pwd = os.getenv('JSERVE_PASSWORD')
+
+    phoneNumberFile = open("AppData/phone_numbers.txt", "r")
     phoneNumbers = []
     for number in phoneNumberFile:
         phoneNumbers.append(number.rstrip())
-
-    dt = datetime.datetime.now()
-    dateString = dt.strftime("%a %b %d, %Y %I:%M %p")
 
     smtpserver = smtplib.SMTP("smtp.gmail.com",587)
     smtpserver.ehlo()
@@ -26,28 +67,32 @@ def notifyUser(message):
     smtpserver.login(gmail_user, gmail_pwd)
     for number in phoneNumbers:
         header = 'To:' + number + '\n' + 'From: ' + gmail_user + '\n'
-        msg = header + '\n' + dateString + "\n" + message + "\nhttps://www.jeopardy.com/tickets"
+        msg = header + '\n' + message
         smtpserver.sendmail(gmail_user, number, msg)
     smtpserver.close()
 
 
-# get the html from the jeopardy ticket webpage
-response = urllib2.urlopen("https://www.jeopardy.com/tickets")
-html = response.read()
+def main():
+    # check if a text has already been sent today
+    if alreadySentText():
+        sys.exit()
 
-# search for section of webpage containing ticket availability
-parsedMatch = re.search(r"<form class=\"requesttickets\".*</form>", html, re.DOTALL)
+    # load the environment variables
+    load_dotenv()
 
-# check to see if the section even exists on webpage
-if parsedMatch:
-    parsedHtml = html[parsedMatch.start():parsedMatch.end()]
-# if not, notify the user
-else:
-    notifyUser("This section did not appear in the html. Fix program.")
+    # request the jeopardy ticket page
+    html = requestPage("https://www.jeopardy.com/tickets")
 
-# search section for message of no ticket availability
-noTicketMatch = re.search(r"There are no tapings scheduled at this time", parsedHtml)
+    # parse the web page and return list of available ticket times
+    tickets = parseWebpage(html)
 
-# if message appears, notify user that no ticket is available
-if not noTicketMatch:
-    notifyUser("Tickets are available. Check website.")
+    # send email if tickets are available
+    if tickets:
+        sendTexts("Jeopardy tickets are available!" + "\n\n" +
+                  "\n".join(tickets) + "\n\n" +
+                  "https://www.jeopardy.com/tickets")
+        storeSentText()
+
+
+if __name__ == "__main__":
+    main()
