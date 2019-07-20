@@ -3,7 +3,6 @@
 import sys, os, datetime, urllib.request, smtplib
 from typing import List
 from bs4 import BeautifulSoup
-#from email.mime.text import MIMEText
 from dotenv import load_dotenv
 
 
