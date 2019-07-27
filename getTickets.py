@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, os, datetime, urllib.request, smtplib
+import sys, os, datetime, urllib.request, smtplib, logging
 from typing import List
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
@@ -72,8 +72,14 @@ def sendTexts(message: str) -> None:
 
 
 def main():
+    # set logging variables
+    logging.basicConfig(filename='AppData/app.log',
+                        level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
+                        datefmt = '%b %d %Y (%I:%M %p)')
+
     # check if a text has already been sent today
     if alreadySentText():
+        logging.info('Already sent a text today.')
         sys.exit()
 
     # load the environment variables
@@ -87,11 +93,16 @@ def main():
 
     # send email if tickets are available
     if tickets:
+        logging.info('Sending text right now.')
         sendTexts("Jeopardy tickets are available!" + "\n\n" +
                   "\n".join(tickets) + "\n\n" +
                   "https://www.jeopardy.com/tickets")
         storeSentText()
 
+
+    else:
+        logging.info('No tickets available right now.')
+        
 
 if __name__ == "__main__":
     main()
