@@ -11,10 +11,10 @@ def alreadySentText() -> bool:
 
     today = datetime.datetime.today()
 
-    if not os.path.exists('AppData/execution_log.txt'):
-        with open('AppData/execution_log.txt', 'w'): pass
+    if not os.path.exists(os.path.dirname(sys.argv[0]) + '/AppData/execution_log.txt'):
+        with open( os.path.dirname(sys.argv[0]) + '/AppData/execution_log.txt', 'w'): pass
 
-    with open('AppData/execution_log.txt', 'r+') as f:
+    with open(os.path.dirname(sys.argv[0]) + '/AppData/execution_log.txt', 'r+') as f:
         if f.readline() == today.strftime('%m%d%Y'):
             return True
 
@@ -26,7 +26,7 @@ def storeSentText() -> None:
 
     today = datetime.datetime.today()
 
-    with open('AppData/execution_log.txt', 'w+') as f:
+    with open(os.path.dirname(sys.argv[0]) + '/AppData/execution_log.txt', 'w+') as f:
         f.write(today.strftime('%m%d%Y'))
 
 
@@ -54,7 +54,7 @@ def sendTexts(message: str) -> None:
     gmail_user = os.getenv('JSERVE_USERNAME')
     gmail_pwd = os.getenv('JSERVE_PASSWORD')
 
-    phoneNumberFile = open("AppData/phone_numbers.txt", "r")
+    phoneNumberFile = open(os.path.dirname(sys.argv[0]) + "/AppData/phone_numbers.txt", "r")
     phoneNumbers = []
     for number in phoneNumberFile:
         phoneNumbers.append(number.rstrip())
@@ -73,7 +73,7 @@ def sendTexts(message: str) -> None:
 
 def main():
     # set logging variables
-    logging.basicConfig(filename='AppData/app.log',
+    logging.basicConfig(filename = os.path.dirname(sys.argv[0]) + '/AppData/app.log',
                         level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                         datefmt = '%b %d %Y (%I:%M %p)')
 
@@ -94,15 +94,22 @@ def main():
     # send email if tickets are available
     if tickets:
         logging.info('Sending text right now.')
-        sendTexts("Jeopardy tickets are available!" + "\n\n" +
-                  "\n".join(tickets) + "\n\n" +
-                  "https://www.jeopardy.com/tickets")
-        storeSentText()
 
+        message = "Jeopardy tickets are available!\n\n" + \
+                  "\n".join(tickets[1:]) + "\n\n" + \
+                  "https://www.jeopardy.com/tickets"
+
+        if len(message) > 150:
+            message = "Jeopardy tickets are available!\n\n" + \
+                      "Too many dates to fit in one text :-(\n\n" + \
+                      "https://www.jeopardy.com/tickets"
+
+        sendTexts(message)
+        storeSentText()
 
     else:
         logging.info('No tickets available right now.')
-        
+
 
 if __name__ == "__main__":
     main()
