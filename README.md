@@ -5,7 +5,7 @@ This Python script implements a web scraper that checks the *Jeopardy!* website 
 The script can be run using the following command
 
 ```
-python3 getTickets.py
+./getTickets.py
 ```
 
 ### Note
