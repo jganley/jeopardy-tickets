@@ -1,4 +1,4 @@
-## *Jeopardy!* Ticket Web Scraper
+# *Jeopardy!* Ticket Web Scraper
 
 This Python script implements a web scraper that checks the *Jeopardy!* website to see if tickets to live tapings are available. If tickets are available, the script sends automated text alerts to a list of phone numbers detailing the dates and times that are available to choose from.
 
